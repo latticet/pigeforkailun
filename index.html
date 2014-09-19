@@ -1,0 +1,624 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<link rel="stylesheet" href="css/style.css">
+	<script type="text/javascript" src="js/jquery1.42.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			var a_01=$('.bannerbtnBox>a');
+			var li_01=$('.bannerul a');
+			$('.bannerul a:gt(0)').hide();
+			$('.bannerbtnBox>a').eq(0).find('.bannerC').css('opacity','0.2');
+
+			a_01.hover(function(){
+				$(this).addClass('active').siblings().removeClass();
+				$(this).siblings().find('.bannerC').stop().css('opacity','0');
+				$(this).find('.bannerC').stop().css('opacity','0.2');
+				li_01.eq(a_01.index(this)).show().siblings().hide();
+			})
+
+
+			var index=0;
+			var lilen=li_01.length;
+
+			function show(num){
+				a_01.eq(num).addClass('active').siblings().removeClass();
+				a_01.eq(num).siblings().find('.bannerC').stop().css('opacity','0');
+				a_01.eq(num).find('.bannerC').stop().css('opacity','0.2');
+				li_01.eq(num).show().siblings().hide();
+			}
+
+			function auto(){
+				if(index==lilen-1){
+					index=-1;
+				}
+				else{
+					index++;
+					show(index);
+				}
+			}
+			setInterval(auto,3000);
+		})
+	</script>
+
+	<script type="text/javascript">
+		$(function(){
+			var liTab=$('.main_03 ul li');
+
+			liTab.hover(function(){
+				$(this).find('.aPic').stop().css('opacity','1');
+				$(this).find('.aPic_01').stop().css('opacity','0.5');
+				$(this).find('.aPic_02').stop().css('opacity','1');
+			},function(){
+				$(this).find('.aPic').stop().css('opacity','0');
+				$(this).find('.aPic_01').stop().css('opacity','0');
+				$(this).find('.aPic_02').stop().css('opacity','0');
+			})
+		})
+
+	</script>
+
+	<script type="text/javascript">
+		$(function(){
+			var list_01=$('.main05_box_02 li');
+
+			list_01.hover(function(){
+				$(this).find('.liW').stop().css('opacity','1');
+				$(this).find('.font_05').css('display','none');
+				$(this).find('.liN_icon').css('display','none');
+			},function(){
+				$(this).find('.liW').stop().css('opacity','0');
+				$(this).find('.font_05').css('display','block');
+				$(this).find('.liN_icon').css('display','block');
+			})
+		})
+	</script>
+
+	<script type="text/javascript">
+		$(function(){
+			var menu_a=$('.menu a');
+			var sub_a=$('.submenuBox>li');
+			menu_a.hover(function(){
+				$(this).addClass('active').siblings().removeClass();
+				$('.submenu').show();
+				sub_a.eq(menu_a.index(this)).slideDown().siblings().slideUp();
+			})
+			sub_a.hover(function(){
+				$(this).show();
+			},function(){
+				$(this).slideUp();
+				$('.submenu').hide();
+			})
+		})
+	</script>
+</head>
+<body>
+
+<!-- header -->
+<div class="header mc">
+	<div class="headerBox w980 mc">
+		<!-- 登录注册 -->
+		<div class="login">
+			<a href="" target="_blank" class="login_btn_01">登录</a>
+			<a href="" target="_blank" class="login_btn_02">注册</a>
+		</div>
+		<!-- logo -->
+		<a href="" target="_blank" class="logo"></a>
+		<!-- menu -->
+		<div class="menu">
+			<a href="" target="_blank">首&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;页</a>
+			<a href="" target="_blank">皮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;鞋</a>
+			<a href="" target="_blank">男女包包</a>
+			<a href="" target="_blank">特殊皮具</a>
+			<a href="" target="_blank">开戈新闻</a>
+			<a href="" target="_blank">商务合作</a>
+			<a href="" target="_blank">联系我们</a>
+		</div>
+	</div>
+</div>
+
+<!-- submenu -->
+<div class="submenu">
+	<div class="w980 mc" style="height:auto;zoom:1;">
+		<ul class="submenuBox pr">
+			<li></li>
+			<li class="li_02">
+				<a href="" target="_blank">
+					<p>男士皮鞋</p>
+					<p>Men's leather shoes</p>
+				</a>
+				<a href="" target="_blank">
+					<p>女士皮鞋</p>
+					<p>Ladies shoes</p>
+				</a>
+			</li>
+			<li class="li_02" style="left:180px;">
+				<a href="" target="_blank">
+					<p>男士包包</p>
+					<p>Men's leather bags</p>
+				</a>
+				<a href="" target="_blank">
+					<p>女士包包</p>
+					<p>Ladies bags</p>
+				</a>
+			</li>
+			<li></li>
+			<li></li>
+			<li class="li_02" style="left:450px;">
+				<a href="" target="_blank">
+					<p>批量定制</p>
+					<p>MMass customization</p>
+				</a>
+				<a href="" target="_blank">
+					<p>招商加盟</p>
+					<p>China Merchants join</p>
+				</a>
+			</li>
+			<li></li>
+		</ul>
+	</div>
+</div>
+
+
+<!-- banner -->
+<div class="bannerContainer">
+	<ul class="bannerul">
+		<a href="" target="_blank"><li style="background:url(images/banner_01.png) no-repeat center top;"></li></a>
+		<a href="" target="_blank"><li style="background:url(images/banner_02.png) no-repeat center top;"></li></a>
+		<a href="" target="_blank"><li style="background:url(images/banner_03.png) no-repeat center top;"></li></a>
+	</ul>
+
+	<div class="bannerbtn">
+		<div class="bannerbtnBox w980 mc">
+			<a href="" class="active" target="_blank">
+				<img src="images/l_01.png" alt="">
+				<p style="font-size:18px;margin-top:5px;">01.顶级手工定制</p>
+				<p>Top handmade custom</p>
+				<span>
+					<img src="images/l_04.png" alt="">
+					<span class="bannerC"></span>
+				</span>
+			</a>
+			<a href="" target="_blank">
+				<img src="images/l_02.png" alt="">
+				<p style="font-size:18px;margin-top:5px;">02.皮具中的艺术品</p>
+				<p>Leather of Art</p>
+				<span>
+					<img src="images/l_05.png" alt="">
+					<span class="bannerC"></span>
+				</span>
+			</a>
+			<a href="" target="_blank">
+				<img src="images/l_03.png" alt="">
+				<p style="font-size:18px;margin-top:5px;">03.客户见证</p>
+				<p>Customer witness</p>
+				<span>
+					<img src="images/l_06.png" alt="">
+					<span class="bannerC"></span>
+				</span>
+			</a>
+		</div>
+	</div>
+</div>
+
+
+<!-- main -->
+<div class="main hz">
+	<!-- 1 -->
+	<div class="main_01 w980 mc">
+		<div class="main_01_box">
+			<p class="font_01">CARLGODRN CUSTOM</p>
+			<p>31年手工艺传承与坚持专注手工定制皮具制作，我们中有许多人一生都在做鞋他们把热情倾注于此，而他们的手艺也将一代代传承下去。我们对于认得双手之创造力推崇备至，对工匠的天赋经验更充满信心，以至于我们31年来以近乎固执的态度拒绝通过模具的方式或依赖机械化主动生产线来制造商品···</p>
+			<p style="margin-top:12px;">
+				<a href="" target="_blank" class="font_02">MORE</a>
+			</P>
+		</div>
+	</div>
+	<!-- 2 -->
+	<div class="main_02 w980 mc"></div>
+
+	<!-- 3 -->
+	<div class="main_03 mc">
+		<ul class="box_01">
+			<li>
+				<span class="aTxt">
+					<p>牛皮</p>
+					<p style="font-size:20px;">Cowhide</p>
+				</span>
+				<a href="" target="_blank" class="aPic"><img src="images/a_01.png" alt=""></a>
+			</li>
+			<li>
+				<span class="aTxt">
+					<p>羊皮</p>
+					<p style="font-size:20px;">Sheepskin</p>
+				</span>
+				<a href="" target="_blank" class="aPic"><img src="images/a_02.png" alt=""></a>
+			</li>
+		</ul>
+		<ul class="box_02">
+			<li>
+				<span class="aTxt" style="width:126px;height:108px;">
+					<p>袋鼠皮</p>
+					<p style="font-size:14px;">Kangaroo skin</p>
+				</span>
+				<a href="" target="_blank" class="aPic" style="width:146px;height:123px;">
+					<img src="images/a_03.png" alt="">
+				</a>
+			</li>
+			<li>
+				<span class="aTxt" style="width:126px;height:108px;">
+					<p>鸵鸟皮</p>
+					<p style="font-size:14px;">Ostrich skin</p>
+				</span>
+				<a href="" target="_blank" class="aPic" style="width:146px;height:123px;">
+					<img src="images/a_04.png" alt="">
+				</a>
+			</li>
+			<li>
+				<span class="aTxt" style="width:126px;height:108px;">
+					<p>蜥蜴皮</p>
+					<p style="font-size:14px;">Lizard</p>
+				</span>
+				<a href="" target="_blank" class="aPic" style="width:146px;height:123px;">
+					<img src="images/a_05.png" alt="">
+				</a>
+			</li>
+			<li>
+				<span class="aTxt" style="width:126px;height:108px;">
+					<p>羊驼皮</p>
+					<p style="font-size:14px;">Alpaca Skin</p>
+				</span>
+				<a href="" target="_blank" class="aPic" style="width:146px;height:123px;">
+					<img src="images/a_06.png" alt="">
+				</a>
+			</li>
+			<li>
+				<span class="aTxt" style="width:126px;height:108px;">
+					<p>蟒蛇皮</p>
+					<p style="font-size:14px;">Python</p>
+				</span>
+				<a href="" target="_blank" class="aPic" style="width:146px;height:123px;">
+					<img src="images/a_07.png" alt="">
+				</a>
+			</li>
+			<li>
+				<span class="aTxt" style="width:126px;height:108px;">
+					<p>鲨鱼皮</p>
+					<p style="font-size:14px;">Shark skin</p>
+				</span>
+				<a href="" target="_blank" class="aPic" style="width:146px;height:123px;">
+					<img src="images/a_08.png" alt="">
+				</a>
+			</li>
+			<li>
+				<span class="aTxt" style="width:126px;height:108px;">
+					<p>鹿皮</p>
+					<p style="font-size:14px;">Buckskin</p>
+				</span>
+				<a href="" target="_blank" class="aPic" style="width:146px;height:123px;">
+					<img src="images/a_09.png" alt="">
+				</a>
+			</li>
+			<li>
+				<span class="aTxt" style="width:126px;height:108px;">
+					<p>珍珠鱼皮</p>
+					<p style="font-size:14px;">Pearl skin</p>
+				</span>
+				<a href="" target="_blank" class="aPic" style="width:146px;height:123px;">
+					<img src="images/a_10.png" alt="">
+				</a>
+			</li>
+			<li>
+				<span class="aTxt" style="width:126px;height:108px;">
+					<p>海豹皮</p>
+					<p style="font-size:14px;">Sealskin</p>
+				</span>
+				<a href="" target="_blank" class="aPic" style="width:146px;height:123px;">
+					<img src="images/a_11.png" alt="">
+				</a>
+			</li>
+		</ul>
+
+		<ul class="box_03">
+			<li>
+				<span class="aTxt_01">
+					<p>特殊皮质</p>
+					<p style="font-size:20px;">Special cortex</p>
+				</span>
+				<span class="aTxt" style="width:346px;height:371px;">
+					
+					<p style="margin-top:240px;">鳄鱼皮</p>
+					<p style="font-size:20px;">Crocodile skin</p>
+				</span>
+				<a href="" class="aPic_01"></a>
+				<a href="" class="aPic_02"><img src="images/a_13.png" alt=""></a>
+				<a href="" target="_blank" class="aPic" style="width:346px;height:371px;">
+					<img src="images/a_12.png" alt="">
+				</a>
+			</li>
+		</ul>
+	</div>
+
+
+	<!-- 4 -->
+	<div class="main_04 mc">
+		<a href="" class="ahover_01" target="_blank">
+			<p style="font-family:'Arial';">Customization process</p>
+			<p style="font-size:20px;">皮鞋皮具定制流程</p>
+		</a>
+		<a href="" target="_blank">
+			<p style="font-family:'Arial';">Purses customized</p>
+			<p style="font-size:20px;">皮包定制流程</p>
+		</a>
+	</div>
+
+	<!-- 5 -->
+	<div class="main_05 pr">
+		<div class="line_01"></div>
+		<div class="main05_box_01">
+			<ul class="main05_box_02 mc">
+				<a href="" target="_blank">
+					<li style="margin-left:-10px;">
+						<div class="liN">
+							<p>01</p>
+							<div class="font_05">
+								<p>设计产品</p>
+								<p>架构</p>
+							</div>
+						</div>
+						<div class="liW">
+							<p>设计产品架构</p>
+						</div>
+					</li>
+				</a>
+				<a href="" target="_blank">
+					<li>
+						<div class="liN">
+							<p>02</p>
+							<div class="font_05">
+								<p>鞋楦制作</p>
+							</div>
+						</div>
+						<div class="liW" style="background:url(images/b_02.png) no-repeat center top;">
+							<p>鞋楦制作</p>
+						</div>
+					</li>
+				</a>
+				<a href="" target="_blank">
+					<li>
+						<div class="liN">
+							<p>03</p>
+							<div class="font_05">
+								<p>鞋款制作</p>
+							</div>
+						</div>
+						<div class="liW" style="background:url(images/b_03.png) no-repeat center top;">
+							<p>鞋款制作</p>
+						</div>
+					</li>
+				</a>
+				<a href="" target="_blank">
+					<li>
+						<div class="liN">
+							<p>04</p>
+							<div class="font_05">
+								<p>客户试穿</p>
+							</div>
+						</div>
+						<div class="liW" style="background:url(images/b_04.png) no-repeat center top;">
+							<p>客户试穿</p>
+						</div>
+					</li>
+				</a>
+				<a href="" target="_blank">
+					<li>
+						<div class="liN">
+							<p>05</p>
+							<div class="font_05">
+								<p>形体调整</p>
+							</div>
+						</div>
+						<div class="liW" style="background:url(images/b_05.png) no-repeat center top;">
+							<p>形体调整</p>
+						</div>
+					</li>
+				</a>
+				<a href="" target="_blank">
+					<li>
+						<div class="liN">
+							<p>06</p>
+							<div class="font_05">
+								<p>下单制作</p>
+							</div>
+						</div>
+						<div class="liW" style="background:url(images/b_06.png) no-repeat center top;">
+							<p>下单制作</p>
+						</div>
+					</li>
+				</a>
+				<a href="" target="_blank">
+					<li>
+						<div class="liN">
+							<p>07</p>
+							<div class="font_05">
+								<p>画线雕饰</p>
+							</div>
+						</div>
+						<div class="liW" style="background:url(images/b_07.png) no-repeat center top;">
+							<p>画线雕饰</p>
+						</div>
+					</li>
+				</a>
+				<a href="" target="_blank">
+					<li>
+						<div class="liN">
+							<p>08</p>
+							<div class="font_05">
+								<p>成型作业</p>
+							</div>
+						</div>
+						<div class="liW" style="background:url(images/b_08.png) no-repeat center top;">
+							<p>成型作业</p>
+						</div>
+					</li>
+				</a>
+				<a href="" target="_blank">
+					<li>
+						<div class="liN">
+							<div class="liN_icon"></div>
+							<p>09</p>
+							<div class="font_05">
+								<p>验收</p>
+							</div>
+						</div>
+						<div class="liW" style="background:url(images/b_09.png) no-repeat center top;">
+							<p>验收</p>
+						</div>
+					</li>
+				</a>
+				
+			</ul>
+		</div>
+	</div>
+
+
+	<!-- 6 -->
+	<div class="w980 mc hz">
+		<div class="main06_box_01">
+			<a href="" target="_blank"><img src="images/pic_02.png" alt=""></a>
+			<div class="main06_box_02 hz">
+				<a href="" target="_blank"><p class="font_04">图文标题假字</p></a>
+				<a href="" target="_blank" style="color:#373737;"><p>Open Ge customized shoes attention is paid to the footsteps of measurement, there is the cortex, in addition there is a shoe set,</p></a>
+				<p style="margin-top:12px;">
+					<a href="" target="_blank" class="font_02">MORE</a>
+				</P>
+			</div>
+		</div>
+		<div class="main06_box_01">
+			<a href="" target="_blank"><img src="images/pic_03.png" alt=""></a>
+			<div class="main06_box_02 hz">
+				<a href="" target="_blank"><p class="font_04">图文标题假字</p></a>
+				<a href="" target="_blank" style="color:#373737;"><p>Open Ge customized shoes attention is paid to the footsteps of measurement, there is the cortex, in addition there is a shoe set,</p></a>
+				<p style="margin-top:12px;">
+					<a href="" target="_blank" class="font_02">MORE</a>
+				</P>
+			</div>
+		</div>
+	</div>
+
+	<!-- 7 -->
+	<div class="w980 mc hz" style="margin-top:30px;">
+		<div class="main_07 hz">
+			<div class="main07_top">
+				<a href="" target="_blank" class="more_01">MORE</a>
+				<span>公司新闻列表</span>
+			</div>
+			<div class="main07_main">
+				<a href="" target="_blank">
+					<span class="time">2014-06-09</span>
+					<span>张亚勤加盟百度负责新兴业务 微软已找继任者</span>
+				</a>
+				<a href="" target="_blank">
+					<span class="time">2014-06-09</span>
+					<span>华为：涉嫌腐败员工大多内部坦白</span>
+				</a>
+				<a href="" target="_blank">
+					<span class="time">2014-06-09</span>
+					<span>虚拟运营商绕不过三道坎 5个月放号仅20多万</span>
+				</a>
+				<a href="" target="_blank">
+					<span class="time">2014-06-09</span>
+					<span>新浪科技4G峰会11日召开 官网 购票 调查结果</span>
+				</a>
+			</div>
+		</div>
+
+		<div class="main_07 hz" style="float:right;">
+			<div class="main07_top">
+				<a href="" target="_blank" class="more_01">MORE</a>
+				<span>行业动态列表</span>
+			</div>
+			<div class="main07_main">
+				<a href="" target="_blank">
+					<span class="time">2014-06-09</span>
+					<span>张亚勤加盟百度负责新兴业务 微软已找继任者</span>
+				</a>
+				<a href="" target="_blank">
+					<span class="time">2014-06-09</span>
+					<span>华为：涉嫌腐败员工大多内部坦白</span>
+				</a>
+				<a href="" target="_blank">
+					<span class="time">2014-06-09</span>
+					<span>虚拟运营商绕不过三道坎 5个月放号仅20多万</span>
+				</a>
+				<a href="" target="_blank">
+					<span class="time">2014-06-09</span>
+					<span>新浪科技4G峰会11日召开 官网 购票 调查结果</span>
+				</a>
+			</div>
+		</div>
+	</div>
+
+	<!-- 8 -->
+	<div class="main_08 w980 mc">
+		<a href="" target='_blank'></a>
+		<a href="" target='_blank'></a>
+		<a href="" target='_blank'></a>
+	</div>
+
+	<!-- 服务 -->
+	<div class="service mc">
+		<div class="w980 mc hz">
+			<div class="service_box_01 hz">
+				<a href="" target="_blank" style="font-size:18px;padding-bottom:10px;">服务</a>
+				<a href="" target="_blank">皮鞋定制</a>
+				<a href="" target="_blank">皮带定制</a>
+				<a href="" target="_blank">皮包定制</a>
+				<a href="" target="_blank">手拿包&钱包定制</a>
+				<a href="" target="_blank">钥匙包定制</a>
+				<a href="" target="_blank">皮料代加工</a>
+				<a href="" target="_blank">整皮购买</a>
+			</div>
+			<div class="service_box_01 hz">
+				<a  style="font-size:18px;padding-bottom:10px;">联系方式</a>
+				<a>24小时热线：4006-3322-69</a>
+				<a>QQ：10293863</a>
+				<a>联系人：宋经理</a>
+				<a>最终解释权为北京开戈皮革有限公司</a>
+				<a>京ICP备13029450号-1</a>
+				<a>Powered by Discuz</a>
+			</div>
+			<div class="service_box_02 hz">
+				<a href="" target="_blank"><img src="images/logo_02.png" alt=""></a>
+				<p style="margin-top:15px;">开戈手工定制，</p>
+				<p>为您提供100%的优秀服务</p>
+				<p style="margin-top:15px;font-size:30px;">4006-3322-69</p>
+			</div>
+		</div>
+	</div>
+
+	<!-- footer -->
+	<div class="footer w980 mc hz">
+		<div class="hz">
+			<a href="" target="_blank" class="font_03">合作网站</a>
+			<a href="" target="_blank"><img src="images/f_01.png" alt=""></a>
+			<a href="" target="_blank"><img src="images/f_02.png" alt=""></a>
+			<a href="" target="_blank"><img src="images/f_03.png" alt=""></a>
+			<a href="" target="_blank"><img src="images/f_04.png" alt=""></a>
+			<a href="" target="_blank"><img src="images/f_05.png" alt=""></a>
+			<a href="" target="_blank"><img src="images/f_06.png" alt=""></a>
+		</div>
+		<div class="hz">
+			© Copyright 2014 CARLGODEN
+		</div>
+	</div>
+</div>
+
+
+
+
+
+</body>
+</html>
